@@ -1,0 +1,36 @@
+{
+  "lang": "ru",
+  "start": {
+    "text": "<a href='https://images.pexels.com/photos/3780104/pexels-photo-3780104.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'>\u2060</a>Привет, {name}!",
+    "markup": [
+      [{"text": "Высчитать мой индекс массы тела", "call_data": "menu_calculate_bmi"}]
+    ],
+    "parse_mode": "HTML"
+  },
+  "menu_calculate_bmi": {
+    "text": "Введи свой вес в килограммах",
+    "markup": [
+      [{"text": "⬅️Назад"}]
+    ],
+    "prev_menu": "start",
+    "filters": ["int"],
+    "next_menu": "menu_calculate_bmi_step_2",
+    "validation_error": "Это не похоже на вес, введи свой вес"
+  },
+  "menu_calculate_bmi_step_2": {
+    "text": "Введи свой рост в сантиметрах",
+    "markup": [
+      [{"text": "⬅️Назад"}]
+    ],
+    "prev_menu": "menu_calculate_bmi",
+    "filters": ["int"],
+    "validation_error": "Это не похоже на рост, введи свой рост"
+  },
+  "bmi_result": {
+    "text": "Твой индекс массы тела <b>{bmi}</b>",
+    "markup": [
+      [{"text": "🆗", "call_data": "menu_start"}]
+    ],
+    "parse_mode": "HTML"
+  }
+}
